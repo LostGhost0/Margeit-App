@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:marge_it_app/Pages/sign_up_page.dart';
+import 'package:marge_it_app/Pages/splash_Screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WelcomeScreen(),
-      debugShowCheckedModeBanner: false,
+      home: VideoSplashScreen(),
     );
   }
 }
 
+class WelcomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('Welcome to the App!'),
+      ),
+    );
+  }
+}

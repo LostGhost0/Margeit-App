@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:marge_it_app/Pages/log_in.dart';
 
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Get the size of the screen
@@ -16,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
           Expanded(
             flex: 6,
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0xFFA52A2A),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(30.0),
@@ -62,37 +65,41 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: height * 0.03), // 3% of the screen height
-                  Container(
+                  SizedBox(
                     width: width * 0.5, // 50% of the screen width
                     child: ElevatedButton(
                       onPressed: () {
                         // Handle login action
+                              Navigator.push(context,
+              MaterialPageRoute(builder: (context) => LoginScreen()));
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Color(0xFFA52A2A),
                         padding: EdgeInsets.symmetric(vertical: height * 0.015),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
+                          borderRadius: BorderRadius.circular(12
+                          ),
                         ),
                       ),
-                      child: Text("Log in"),
+                      child: const Text("Log in"),
                     ),
                   ),
                   SizedBox(height: height * 0.015), // 1.5% of the screen height
-                  Container(
+                  SizedBox(
                     width: width * 0.5, // 50% of the screen width
                     child: OutlinedButton(
                       onPressed: () {
                         // Handle registration action
+                
                       },
                       style: OutlinedButton.styleFrom(
                         side: BorderSide(color: Color(0xFFA52A2A)),
                         padding: EdgeInsets.symmetric(vertical: height * 0.015),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         "Registration",
                         style: TextStyle(color: Color(0xFFA52A2A)),
                       ),
